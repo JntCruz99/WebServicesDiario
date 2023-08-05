@@ -77,10 +77,7 @@ public class AulaController {
         Optional<Aula> aulaOptional = aulaRepository.findById(id);
         if (aulaOptional.isPresent()) {
             Aula aula = aulaOptional.get();
-            // Atualize os campos relevantes da aula com os valores da aulaAtualizada
-            // aula.setDataAula(aulaAtualizada.getDataAula());
-            // aula.setHorasDeAula(aulaAtualizada.getHorasDeAula());
-            // ... e assim por diante ...
+
             Aula updatedAula = aulaRepository.save(aula);
             return ResponseEntity.ok(updatedAula);
         } else {
@@ -99,6 +96,5 @@ public class AulaController {
         }
     }
 
-    // Implemente aqui outros métodos conforme necessário.
 
 }
